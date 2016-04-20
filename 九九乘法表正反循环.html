@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>*{margin:0;padding:0;}span{border:1px solid #d8d8d8;padding:5px;display:inline-block;overflow:hidden;}.hide{display:none}.show{}</style>
+</head>
+<body>
+	<script>
+		function f(n){
+			for(var i=1;i<=n;i++){
+				for(var j=1;j<=i;j++){
+					document.writeln('<span class="hide">'+j+"*"+i+'='+i*j+'</span>');
+				}
+				document.writeln('<br>');
+			}
+			var element=document.querySelectorAll(".hide");
+			var z=len=element.length;
+			var k=0,interval;
+			function fn(){
+				if(k<len){
+					k<len?element[k].className='show':clearInterval(interval);
+					k++;
+				}else{
+					z>0?element[z-1].className='hide':all();
+					z--;
+				}
+			}
+			function all(){
+				clearInterval(interval);
+				for(var i=0;i<len;i++){
+					element[i].className='show';
+				}
+			}
+			interval=setInterval(fn,100);
+		}
+		f(10);	
+	</script>
+</body>
+</html>
