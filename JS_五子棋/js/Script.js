@@ -10,6 +10,7 @@ for (var i = 0; i<15; i++) {
 		chessBox[i][j]=0;
 	}
 }
+
 var Wins=[];//赢法数组
 for (var i = 0; i<15; i++) {
 	Wins[i]=[];
